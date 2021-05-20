@@ -7,8 +7,7 @@ const enquiry = document.getElementById('enquiry');
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	checkInputs();
-    clearInput();
-    
+	console.log(enquiry);
 });
 
 
@@ -19,45 +18,40 @@ function checkInputs() {
 	const phoneValue = phone.value.trim();
 	const enquiryValue = enquiry.value.trim();
 	
-	if(nameValue === '') {
-		setErrorFor(name, 'Name cannot be blank');
-        name.classList.add("highlight");
-	} else if (emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
-        email.classList.add("highlight");
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
-        email.classList.add("highlight");
-	} else {
-		setSuccessFor(email);
+	if (nameValue === '' || emailValue ==='' || phoneValue ==='' || enquiryValue === ''){
+		alert("Fields can not be empty");
+		(nameValue === '') ? name.classList.add("highlight") : '' ;
+		(phoneValue === '') ? phone.classList.add("highlight") : '' ;
+		(emailValue === '') ? email.classList.add("highlight") : '' ;
+		(enquiryValue === '') ? enquiry.classList.add("highlight") : '' ;
+	} else if (!(isEmail(emailValue))){
+		alert("insert a valid email");
+	} else if (!(isPhone(phoneValue))){
+		alert("insert a valid phone number");
+	} else 	{
+		alert("Your enquiry has been sent, we will be in touch shortly");
+		name.value = "";
+		phone.value = "";
+		email.value = "";
+		enquiry.value = "";
 	}
+
 	
-	if(phoneValue === '') {
-		setErrorFor(phone, 'Phone cannot be blank');
-        phone.classList.add("highlight");
-	} else {
-		setSuccessFor(phone);
-	}
-	
-	if(enquiry === '') {
-		setErrorFor(enquiry, 'Enquiry cannot be blank');
-        enquiry.classList.add("highlight");
-	} else {
-		setSuccessFor(enquiry);
-	}
 }
 
-function setErrorFor(input, message) {
-	alert(message);  
-}
 
-function setSuccessFor(input) {
-	
-}
 	
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+function isPhone(phone) {
+	var patt = new RegExp(/^\+?1?\s*?\(?\d{3}(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{4}$/);
+	return patt.test(phone);
+}
+  
+ 
+
 
 function clearInput (){
     phone.value="";
