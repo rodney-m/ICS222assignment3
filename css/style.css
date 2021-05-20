@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --lightgray: #f5f5f5;
+  --darkgray: #242221;
+}
+
+body {
+  background-color: var(--lightgray);
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 32px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--lightgray);
+  z-index: 90;
+  border-bottom: 1px solid #ccc;
+}
+
+header .logo {
+  height: 30px;
+}
+header > a {
+  margin-right: auto;
+}
+
+header nav {
+  margin-left: 32px;
+}
+
+header nav .nav-links {
+  list-style: none;
+}
+
+header nav .nav-links li {
+  display: inline;
+  padding: 0 8px;
+}
+
+header nav .nav-links li a {
+  text-decoration: none;
+  color: var(--darkgray);
+  font-weight: 200;
+}
+
+section.main {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "grid-one grid-one grid-two grid-two"
+    "grid-one grid-one grid-three grid-four";
+  padding: 0 32px;
+  margin-top: 84px;
+}
+
+.grid-one,
+.grid-two,
+.grid-three,
+.grid-four {
+  padding: 32px;
+  color: #fff;
+}
+
+.grid-one:hover,
+.grid-two:hover,
+.grid-three:hover,
+.grid-four:hover {
+  transform: scale(1.01);
+}
+
+.grid-one {
+  grid-area: grid-one;
+  height: 90vh;
+  background: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/pic-1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 55vw;
+}
+
+.grid-one h2 {
+  font-size: 38px;
+  font-weight: 300;
+}
+
+.grid-one .btn {
+  color: #fff;
+  border: 1px solid #ffffff;
+  width: fit-content;
+  padding: 8px 18px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.grid-one .btn:hover {
+  border: 2px solid #ffffff;
+}
+
+.grid-two {
+  grid-area: grid-two;
+  background: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/pic-2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.grid-three {
+  grid-area: grid-three;
+  background-color: #003c4a;
+
+  display: flex;
+  flex-direction: column;
+}
+.grid-three h2 {
+  font-weight: 300;
+}
+.grid-three a {
+  margin-top: auto;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.grid-three a:hover {
+  color: #666;
+}
+.grid-four {
+  grid-area: grid-four;
+  background: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/pic-4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid-four h2 {
+  font-weight: 300;
+}
+
+/* Section 2 */
+
+.section-two {
+  text-align: center;
+  padding: 80px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-two h1 {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.section-two img {
+  max-width: 100%;
+}
+
+.section-two .section-two-cta {
+  color: var(--darkgray);
+  text-decoration: none;
+  border: 1px solid var(--darkgray);
+  padding: 8px 30px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.text-bottom {
+  padding: 16px;
+}
+
+.text-bottom {
+  font-weight: 300;
+}
+
+/* Mobile */
+
+.menu {
+  font-size: 20px;
+}
+
+#side-navbar .close {
+  text-align: left;
+  padding: 25px;
+  font-size: 20px;
+}
+#side-navbar {
+  position: absolute;
+  right: -2000px;
+  top: 0;
+  height: 100vh;
+  width: 80vw;
+  z-index: 100;
+  background-color: #fff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#side-navbar a {
+  color: var(--darkgray);
+  text-decoration: none;
+  width: 100%;
+  padding: 20px;
+}
+
+#side-navbar a:hover {
+  background-color: var(--lightgray);
+}
+
+.active {
+  right: 0;
+}
+
+/* Featured cars */
+
+.featured-cars h2 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.featured-cars {
+  margin-bottom: 30px;
+}
+
+.feature {
+  background-color: #fff;
+  -webkit-box-shadow: 6px 6px 11px -5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 6px 6px 11px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 6px 6px 11px -5px rgba(0, 0, 0, 0.6);
+}
+
+.feature img.thumbnail {
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.speedometer {
+  height: 20px;
+  padding: 20px;
+}
+
+.featured-cars-container,
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  gap: 20px;
+  justify-content: center;
+}
+
+footer {
+  border-top: 1px solid #cccccc;
+  padding: 30px;
+  text-align: center;
+}
+
+footer a {
+  color: #666666;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Contact */
+
+.hero.contact {
+  height: 50vh;
+  background: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/contact.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  background-attachment: fixed;
+}
+
+.contact-form {
+  max-width: 800px;
+  padding: 30px;
+  text-align: center;
+  margin: auto;
+}
+
+.contact-form .form-input {
+  width: 100%;
+  display: block;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.contact-form .filled-button {
+  padding: 16px;
+  width: 100%;
+  background-color: #2b9fc7;
+  border: 0;
+  color: #fff;
+}
+
+.contact-form .filled-button:hover {
+  background-color: rgba(43, 160, 199, 0.719);
+}
+
+.heading {
+  padding: 60px;
+  text-align: center;
+  font-weight: 100 !important;
+}
+
+/* cars page */
+
+.gallery {
+  padding: 30px;
+  margin: 30px 0;
+}
+
+table {
+  width: 100%;
+}
+table tr{
+  text-align: left;
+}
+
+
+@media (max-width: 1110px) {
+  section.main {
+    grid-template-areas:
+      "grid-one grid-one "
+      "grid-two grid-three "
+      "grid-four grid-four";
+  }
+  .grid-one {
+    width: auto;
+    height: 60vh;
+  }
+  .hero.contact {
+    font-size: 30px;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-two {
+    display: none;
+  }
+  section.main {
+    grid-template-areas:
+      "grid-one grid-one "
+      "grid-three grid-three "
+      "grid-four grid-four";
+  }
+  .section-two h1 {
+    font-size: 20px;
+  }
+
+  .featured-cars h2 {
+    font-size: 25px;
+  }
+  .grid-one,
+  .grid-two,
+  .grid-three,
+  .grid-four {
+    padding: 20px;
+  }
+
+  .grid-one h2 {
+    font-size: 28px;
+    font-weight: 300;
+  }
+}
+
+
+
+/* Enquiries ccs file */
+.form {
+	padding: 30px 40px;	
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form button {
+	background-color: #2b9fc7;
+	border: 2px solid #2b9fc7;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.highlight{
+  border: 1px solid coral!important;
+}
