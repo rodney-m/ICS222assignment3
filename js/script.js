@@ -7,7 +7,6 @@ const enquiry = document.getElementById('enquiry');
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	checkInputs();
-	console.log(enquiry);
 });
 
 
